@@ -37,7 +37,7 @@ resource "aws_security_group" "expense" {
 
 resource "aws_instance" "expense" {
   instance_type          = "t2.micro"
-  ami                    = "ami-090252cbe067a9e58"  # Replace with valid AMI for your region
+  ami                    = "ami-0c1fe732b5494dc14"  # Replace with valid AMI for your region
   vpc_security_group_ids = [aws_security_group.expense.id]
 
   tags = {
