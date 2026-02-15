@@ -32,3 +32,7 @@ variable "Instance_AMI" {
 variable "instance_type" {
   default = "m4.xlarge"
 }
+
+variable "region" {
+  default = "us-east-1"
+}
