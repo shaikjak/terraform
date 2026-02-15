@@ -26,6 +26,9 @@ variable "tags" {
 variable "Instance_AMI" {
   default = {
     ami           = "ami-0c1fe732b5494dc14"
-    instance_type = "t2.micro"
   }
+}
+
+variable "instance_type" {
+  default = "m4.xlarge"
 }
