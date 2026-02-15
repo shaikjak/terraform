@@ -38,3 +38,9 @@ variable "instance_type" {
 variable "region" {
   default = "us-east-1"
 }
+
+variable "instance_names" {
+    type = list
+    default = ["db", "backend", "frontend"]
+}
+

@@ -23,6 +23,7 @@ resource "aws_security_group" "expense" {
 }
 
 resource "aws_instance" "expense" {
+  count = length(var.instance_names)
   ami                    = var.Instance_AMI.ami
   instance_type          = var.region == "us-east-1" ? "m4.xlarge" : "t2.medium"
   vpc_security_group_ids = [aws_security_group.expense.id]
@@ -30,4 +31,9 @@ resource "aws_instance" "expense" {
   tags = {
     Name = "expense"
   }
+}
+
+output "expense_public_ip" {
+  description = "Public IP of expense EC2 instance"
+  value       = aws_instance.expense.public_ip
 }
