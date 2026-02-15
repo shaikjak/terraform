@@ -23,7 +23,7 @@ resource "aws_security_group" "expense" {
 }
 
 resource "aws_instance" "expense" {
-  instance_type          = var.Instance_AMI == "us-east-1" ? "t2.micro" : "t2.medium"
+  instance_type          = var.Instance_AMI == "us-east-1" ? "m4.xlarge" : "t2.medium"
   ami                    = var.Instance_AMI.ami # Replace with valid AvarMI for your region#
   vpc_security_group_ids = [aws_security_group.expense.id]
 
