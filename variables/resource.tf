@@ -24,7 +24,7 @@ resource "aws_security_group" "expense" {
 
 resource "aws_instance" "expense" {
   instance_type          = var.Instance_AMI.instance_type
-  ami                    =  var.Instance_AMI.ami # Replace with valid AvarMI for your region#
+  ami                    = var.Instance_AMI.ami # Replace with valid AvarMI for your region#
   vpc_security_group_ids = [aws_security_group.expense.id]
 
   tags = {
