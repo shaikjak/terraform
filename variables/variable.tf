@@ -8,11 +8,13 @@ variable "expense_security_group" {
 variable "ports" {
   default = 22
 }
+
 variable "protocols" {
   default = "tcp"
 }
+
 variable "cidr_blocks" {
-  type = list(string)
+  type    = list(string)
   default = ["0.0.0.0/0"]
 }
 
@@ -25,7 +27,7 @@ variable "tags" {
 
 variable "Instance_AMI" {
   default = {
-    ami           = "ami-0c1fe732b5494dc14"
+    ami = "ami-0c1fe732b5494dc14"
   }
 }
 

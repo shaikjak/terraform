@@ -17,14 +17,14 @@ resource "aws_security_group" "expense" {
   }
 
   tags = {
-    Description = var.tags.name
+    Description = var.tags.Description
     CreatedBy   = var.tags.CreatedBy
   }
 }
 
 resource "aws_instance" "expense" {
+  ami                    = var.Instance_AMI.ami
   instance_type          = var.region == "us-east-1" ? "m4.xlarge" : "t2.medium"
-  ami                    = var.Instance_AMI.ami # Replace with valid AvarMI for your region#
   vpc_security_group_ids = [aws_security_group.expense.id]
 
   tags = {
