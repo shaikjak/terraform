@@ -29,11 +29,11 @@ resource "aws_instance" "expense" {
   vpc_security_group_ids = [aws_security_group.expense.id]
 
   tags = {
-    Name = "expense"
+    Name = var.instance_names[count.index]
   }
 }
 
 output "expense_public_ip" {
   description = "Public IP of expense EC2 instance"
-  value       = aws_instance.expense.public_ip
+  value       = aws_instance.expense[*].public_ip
 }
